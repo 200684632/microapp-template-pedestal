@@ -22,6 +22,8 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
 				"@vue/cli-plugin-eslint": "~4.5.0",
 				"@vue/cli-service": "~4.5.0",
 				"babel-eslint": "^10.1.0",
+				"node-sass": "^4.12.0",
+    		"sass-loader": "^7.0.1",
 				"eslint": "^6.7.2",
 				"eslint-plugin-vue": "^6.2.2",
 				"vue-template-compiler": "^2.6.11"
