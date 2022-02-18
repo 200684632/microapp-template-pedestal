@@ -2,7 +2,7 @@ module.exports = [
 	{
 		type: 'list',
 		name: 'project_type',
-		message: '请选择需要安装的基座成?',
-		choices: ['microapp+vue2+elementui', 'vant+vue2']
+		message: '请选择需要安装的程序类型?',
+		choices: ['microapp+vue2+elementui基座', 'microapp+vue2+elementui子应用', 'vant+vue2移动端，公众号']
 	}
 ]
