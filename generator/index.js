@@ -1,6 +1,5 @@
 module.exports = (api, _options = {}, rootOptions = {}) => {
 
-	console.log('------', _options, rootOptions)
 	api.extendPackage({
 		scripts: {
 				"serve": "vue-cli-service serve",
