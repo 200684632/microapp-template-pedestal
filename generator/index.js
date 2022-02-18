@@ -13,6 +13,7 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
         "@micro-zoe/micro-app": "^0.2.2",
         "axios": "^0.21.1",
 				"vue-router": "^3.5.2",
+				"vue-template-compiler": "^2.6.11",
     		"vuex": "^3.6.2",
 				"element-ui": "^2.15.5",
       },
@@ -24,8 +25,7 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
 				"node-sass": "^4.12.0",
     		"sass-loader": "^7.0.1",
 				"eslint": "^6.7.2",
-				"eslint-plugin-vue": "^6.2.2",
-				"vue-template-compiler": "^2.6.11"
+				"eslint-plugin-vue": "^6.2.2"
 			},
     })
 
