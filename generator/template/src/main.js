@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import App from './App.vue'
-import router from '@/router'
+import myrouter from './myrouter'
 import store from '@/store'
 import basic from 'GW-basics'
 import Element from 'element-ui';
@@ -19,7 +19,7 @@ Vue.config.productionTip = false
 Vue.config.devtools = false
 
 new Vue({
-  router,
+  router: myrouter,
   store,
   render: h => h(App),
 }).$mount('#app')
