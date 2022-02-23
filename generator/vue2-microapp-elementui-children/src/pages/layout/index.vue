@@ -1,7 +1,6 @@
 <template>
   <div class="app_main">
     <el-container>
-      <el-header>Header</el-header>
       <el-container>
         <el-aside width="200px">
           左侧
