@@ -10,14 +10,16 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
 
     api.extendPackage({
       "dependencies": {
-        "@micro-zoe/micro-app": "^0.2.2",
+        "@micro-zoe/micro-app": "^0.8.5",
         "axios": "^0.21.1",
 				"vue-router": "^3.5.2",
-				"vue-template-compiler": "^2.6.11",
     		"vuex": "^3.6.2",
 				"element-ui": "^2.15.5",
+        "core-js": "^3.6.5",
+        "GW-basics": "^0.1.0",
       },
 			"devDependencies": {
+        "vue-template-compiler": "^2.6.11",
 				"@vue/cli-plugin-babel": "~4.5.0",
 				"@vue/cli-plugin-eslint": "~4.5.0",
 				"@vue/cli-service": "~4.5.0",
