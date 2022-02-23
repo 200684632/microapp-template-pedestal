@@ -2,20 +2,21 @@ import Vue from 'vue';
 import VueRouter from 'vue-router';
 import { routers } from 'GW-basics'
 import Layout from '@/pages/layout'
+import store from '@/store'
 
 Vue.use(VueRouter)
 
 const routes = [
-	...routers({
-		layout: Layout
-	}),
-	{
+  ...routers({
+    layout: Layout
+  }),
+  {
     path: '/',
     component: Layout,
     children: [
       {
-        path: '',
-        name: '概览',
+        path: 'home',
+        name: 'home',
         meta: {
           menu: false,
           remark: '',
@@ -23,14 +24,21 @@ const routes = [
           $keepAlive: true,
         },
         component: () =>
-        import( /* webpackChunkName: "views" */ '@/views/home/index'),
+          import( /* webpackChunkName: "views" */ '@/views/home/index'),
       }
     ]
   },
 ]
 const router = new VueRouter({
-	routes,
+  routes,
   base: window.__MICRO_APP_BASE_ROUTE__ || '/'
+})
+
+router.beforeEach(async (to, from, next) => {
+  if(store.state.basic.loaded == false) {
+    await store.dispatch('GetUserInfo')
+  }
+  next()
 })
 
 export default router;
