@@ -4,7 +4,7 @@
       <el-header>Header</el-header>
       <el-container>
         <el-aside width="200px">
-          <basic-sidebar></basic-sidebar>
+          左侧
         </el-aside>
         <el-main class="layout_main">
           <div class="content">
