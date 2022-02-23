@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import {routers} from 'GW-basics'
+import { routers } from 'GW-basics'
 import Layout from '@/pages/layout'
 import store from '@/store'
 
@@ -15,6 +15,9 @@ const routes = [
     name: 'login',
 		component: () =>
           import( /* webpackChunkName: "views" */ '@/pages/login/index'),
+    meta: {
+      isAuth: false
+    }
   },
 	{
     path: '/',
@@ -41,11 +44,17 @@ const router = new VueRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
-  if(store.getters.token.length > 0) {
-    await store.dispatch('GetUserInfo')
+  if(store.getters.token) {
+    if(store.state.basic.loaded == false) {
+      await store.dispatch('GetUserInfo')
+    }
     next()
   }else {
-    next('/login')
+    if(to.meta.isAuth === false) {
+      next()
+    }else {
+      next('/login')
+    }
   }
 })
 
