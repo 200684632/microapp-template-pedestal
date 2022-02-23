@@ -7,5 +7,8 @@
 		},
 		"@vue/cli-plugin-vuex": {}
 	},
-	"cssPreprocessor": "scss"
+	"cssPreprocessor": "scss",
+  "publishConfig": {
+    "registry": "http://192.168.10.10:18081/repository/npm-group/"
+  }
 }
