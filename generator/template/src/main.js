@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import App from './App.vue'
-import myrouter from './myrouter'
-import store from '@/store'
+import router from './router'
+import store from './store'
 import basic from 'GW-basics'
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
@@ -19,7 +19,7 @@ Vue.config.productionTip = false
 Vue.config.devtools = false
 
 new Vue({
-  router: myrouter,
-  store,
+  router: router,
+  store: store,
   render: h => h(App),
 }).$mount('#app')
