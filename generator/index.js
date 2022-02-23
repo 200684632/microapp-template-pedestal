@@ -31,18 +31,6 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
     api.render('./vue2-microapp-elementui-pedestal')
   }
   if(_options.project_type == 'microapp+vue2+elementui子应用') {
-    api.configureWebpack(webpackConfig => {
-      return {
-        publicPath: '/',
-        devServer: {
-          port: 1779,
-          headers: {
-            'Access-Control-Allow-Origin': '*',
-          }
-        },
-      }
-    })
-
     api.render('./vue2-microapp-elementui-children')
   }
 }
