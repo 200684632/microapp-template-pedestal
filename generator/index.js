@@ -1,6 +1,5 @@
 module.exports = (api, _options = {}, rootOptions = {}) => {
 
-
   api.extendPackage({
     scripts: {
       "serve": "vue-cli-service serve",
@@ -28,5 +27,10 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
       "eslint-plugin-vue": "^6.2.2"
     },
   })
-  api.render('./template')
+  if(_options.project_type == 'microapp+vue2+elementui基座') {
+    api.render('./vue2-microapp-elementui-pedestal')
+  }
+  if(_options.project_type == 'microapp+vue2+elementui子应用') {
+    api.render('./vue2-microapp-elementui-children')
+  }
 }

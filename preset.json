@@ -7,24 +7,5 @@
 		},
 		"@vue/cli-plugin-vuex": {}
 	},
-	"cssPreprocessor": "scss",
-  "configs" : {
-    "eslintConfig": {
-      "root": true,
-      "env": {
-        "node": true
-      },
-      "extends": [
-        "plugin:vue/essential",
-        "eslint:recommended"
-      ],
-      "parserOptions": {
-        "parser": "babel-eslint"
-      },
-      "rules": {}
-    },
-    "publishConfig": {
-      "registry": "http://192.168.10.10:18081/repository/npm-group/"
-    }
-  }
+	"cssPreprocessor": "scss"
 }

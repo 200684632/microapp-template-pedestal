@@ -2,21 +2,25 @@ import Vue from 'vue'
 import App from './App.vue'
 import router from './router'
 import store from './store'
-import basic from 'GW-basics'
+import { axios } from 'GW-basics'
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/config'
-import microApp from '@micro-zoe/micro-app'
 
-//微前端启动
-microApp.start()
-//注册自定义组件包含登录菜单
-Vue.use(basic)
 Vue.use(Element);
 //注册全局axios 请求
-window.myAxios = basic.getAxios(store)
+window.myAxios = axios(store)
 Vue.config.productionTip = false
 Vue.config.devtools = false
+
+//microapp添加事件箭筒控制页面跳转
+function dataListener(data) {
+  setTimeout(() => {
+    router.push({ name: data.routerName });
+  }, 0)
+}
+
+window.microApp?.addDataListener(dataListener, true)
 
 new Vue({
   router: router,
