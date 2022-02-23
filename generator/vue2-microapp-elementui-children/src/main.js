@@ -6,9 +6,10 @@ import { axios } from 'GW-basics'
 import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/config'
+import basic from 'GW-basics'
 
 Vue.use(Element);
-
+Vue.use(basic)
 //注册全局axios 请求
 window.myAxios = axios(store)
 Vue.config.productionTip = false
