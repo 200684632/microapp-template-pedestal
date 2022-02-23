@@ -30,6 +30,8 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
 				"eslint-plugin-vue": "^6.2.2"
 			},
     })
-
+    api.publishConfig({
+      'registry': 'http://192.168.10.10:18081/repository/npm-group/'
+    })
 		api.render('./template')
   }
