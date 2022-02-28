@@ -16,7 +16,8 @@ const routes = [
 		component: () =>
           import( /* webpackChunkName: "views" */ '@/pages/login/index'),
     meta: {
-      isAuth: false
+      isAuth: false,
+      title: '登录'
     }
   },
 	{
@@ -25,12 +26,13 @@ const routes = [
     children: [
       {
         path: '',
-        name: '概览',
+        name: 'home',
         meta: {
           menu: false,
           remark: '',
           code: '/wel/index',
           $keepAlive: true,
+          title: '首页'
         },
         component: () =>
         import( /* webpackChunkName: "views" */ '@/views/home/index'),
@@ -44,6 +46,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+  window.document.title = to.meta.title
   if(store.getters.token) {
     if(store.state.basic.loaded == false) {
       await store.dispatch('GetUserInfo')

@@ -15,13 +15,14 @@ const routes = [
     component: Layout,
     children: [
       {
-        path: 'home',
+        path: '',
         name: 'home',
         meta: {
           menu: false,
           remark: '',
           code: '/wel/index',
           $keepAlive: true,
+          title: '首页'
         },
         component: () =>
           import( /* webpackChunkName: "views" */ '@/views/home/index'),
@@ -35,6 +36,7 @@ const router = new VueRouter({
 })
 
 router.beforeEach(async (to, from, next) => {
+  window.document.title = to.meta.title
   if(store.state.basic.loaded == false) {
     await store.dispatch('GetUserInfo')
   }
