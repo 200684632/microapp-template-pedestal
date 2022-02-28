@@ -1,6 +1,6 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { routers } from 'GW-basics'
+import { routers } from 'gw-basics'
 import Layout from '@/pages/layout'
 import store from '@/store'
 

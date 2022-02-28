@@ -19,7 +19,7 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
       "@vue/cli-plugin-babel": "~4.5.0",
       "@vue/cli-plugin-eslint": "~4.5.0",
       "@vue/cli-service": "~4.5.0",
-      "GW-basics": "http://192.168.10.10:18081/repository/npm-group/GW-basics/-/GW-basics-0.1.2.tgz",
+      "gw-basics": "http://192.168.10.10:18081/repository/npm-group/gw-basics/-/gw-basics-0.1.2.tgz",
       "babel-eslint": "^10.1.0",
       "node-sass": "^4.12.0",
       "sass-loader": "^7.0.1",

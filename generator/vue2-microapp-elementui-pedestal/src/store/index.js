@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import basic from 'GW-basics'
+import basic from 'gw-basics'
 import getters from './getters'
 
 Vue.use(Vuex)
