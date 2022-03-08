@@ -25,7 +25,11 @@ function dataListener(data) {
   }, 0)
 }
 
-window.microApp.addDataListener(dataListener, true)
+if(window.microApp) {
+  window.microApp.addDataListener(dataListener, true)
+}else {
+  store.commit('SET_TOKEN', 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJuYmYiOjE2NDY3OTQ1NDksInVzZXJfaWQiOjEsImV4cCI6MTY0NzE0MDE0OSwiaWF0IjoxNjQ2NzA4MTQ5fQ.9M_sfNgQPfKKOo3AbEK8g4vy5VBB8Qpi8A9ZKTQKk_w')
+}
 
 new Vue({
   router: router,
