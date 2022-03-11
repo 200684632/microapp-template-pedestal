@@ -9,6 +9,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/config'
 import microApp from '@micro-zoe/micro-app'
 import { loadStyle } from 'gw-basics/src/util'
+import formCreate from '@form-create/element-ui'
+
+//注册
+Vue.use(formCreate)
 
 //微前端启动
 microApp.start()

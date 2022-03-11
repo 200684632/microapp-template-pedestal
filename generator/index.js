@@ -7,6 +7,7 @@ module.exports = (api, _options = {}, rootOptions = {}) => {
       "lint": "vue-cli-service lint"
     },
     "dependencies": {
+      "@form-create/element-ui": "^2.5.17",
       "@micro-zoe/micro-app": "^0.8.5",
       "axios": "^0.21.1",
       "vue-router": "^3.5.2",

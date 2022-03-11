@@ -8,6 +8,10 @@ import 'element-ui/lib/theme-chalk/index.css';
 import '@/config'
 import basic from 'gw-basics'
 import { loadStyle } from 'gw-basics/src/util'
+import formCreate from '@form-create/element-ui'
+
+//注册
+Vue.use(formCreate)
 
 Vue.use(Element);
 Vue.use(basic)
