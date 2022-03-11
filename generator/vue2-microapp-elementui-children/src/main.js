@@ -7,6 +7,7 @@ import Element from 'element-ui';
 import 'element-ui/lib/theme-chalk/index.css';
 import '@/config'
 import basic from 'gw-basics'
+import { loadStyle } from 'gw-basics/src/util'
 
 Vue.use(Element);
 Vue.use(basic)
@@ -14,6 +15,12 @@ Vue.use(basic)
 window.myAxios = axios(store)
 Vue.config.productionTip = false
 Vue.config.devtools = false
+// 动态加载阿里云字体库
+//可加载多个
+const iconfontVersion = ['1970983_0f82e1mdczco']
+iconfontVersion.forEach(ele => {
+  loadStyle('//at.alicdn.com/t/font_$key.css'.replace('$key', ele));
+});
 
 //microapp添加事件箭筒控制页面跳转
 function dataListener(data) {

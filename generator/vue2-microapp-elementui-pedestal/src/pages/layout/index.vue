@@ -1,7 +1,7 @@
 <template>
   <div class="app_main">
     <el-container>
-      <el-header>Header</el-header>
+      <el-header><basic-sidebar mode="horizontal"></basic-sidebar></el-header>
       <el-container>
         <el-aside width="200px">
           <basic-sidebar></basic-sidebar>
@@ -47,6 +47,20 @@ export default {
     height: calc(100vh - 60px);
     background: #f9f9f9;
     padding: 20px;
+  }
+  .content {
+    height: calc(100vh - 100px);
+    .el-card {
+      height: 100%;
+      .el-card__body {
+        height: calc(100% - 100px);
+        overflow-y: auto;
+      }
+    }
+    .el-pagination {
+      text-align: center;
+      margin: 12px 0 0 0;
+    }
   }
 }
 </style>
