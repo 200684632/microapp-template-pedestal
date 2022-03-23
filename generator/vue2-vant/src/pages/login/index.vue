@@ -7,7 +7,7 @@
 					<div class="login-main-right">
 						<div class="img" :style='`background: url("${$route.meta.icon}") no-repeat;background-size: 100% 100%;`'/>
 					</div>
-					<basic-login></basic-login>
+          <MobileLoginVue></MobileLoginVue>
 				</div>
 			</div>
 		</div>
@@ -19,11 +19,14 @@
 </template>
 
 <script>
-
+import { MobileLoginVue } from 'gw-basic'
   export default {
     data() {
 			return {}
 		},
+    components: {
+      MobileLoginVue
+    },
     created() {
     },
     mounted() {
