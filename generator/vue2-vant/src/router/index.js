@@ -42,10 +42,18 @@ const router = new VueRouter({
 
 router.beforeEach(async (to, from, next) => {
   window.document.title = to.meta.title
-  if(store.state.basic.loaded == false) {
-    await store.dispatch('GetUserInfo')
+  if(store.getters.token) {
+    if(store.state.basic.loaded == false) {
+      await store.dispatch('GetUserInfo')
+    }
+    next()
+  }else {
+    if(to.meta.isAuth === false) {
+      next()
+    }else {
+      next('/login')
+    }
   }
-  next()
 })
 
 export default router;
