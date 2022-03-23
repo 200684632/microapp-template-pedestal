@@ -1,15 +1,21 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
-import { routers } from 'gw-basics'
 import Layout from '@/pages/layout'
 import store from '@/store'
 
 Vue.use(VueRouter)
 
 const routes = [
-  ...routers({
-    layout: Layout
-  }),
+  {
+    path: '/login',
+    name: 'login',
+		component: () =>
+          import( /* webpackChunkName: "views" */ '@/pages/login/index'),
+    meta: {
+      isAuth: false,
+      title: '登录'
+    }
+  },
   {
     path: '/',
     component: Layout,
@@ -25,14 +31,13 @@ const routes = [
           title: '首页'
         },
         component: () =>
-          import( /* webpackChunkName: "views" */ '@/views/home/index'),
+          import( /* webpackChunkName: "views" */ '@/views/Home'),
       }
     ]
   },
 ]
 const router = new VueRouter({
   routes,
-  base: window.__MICRO_APP_BASE_ROUTE__ || '/'
 })
 
 router.beforeEach(async (to, from, next) => {
